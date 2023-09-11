@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
@@ -26,40 +33,55 @@ void main() {
                           Container(
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20)
-                            ),
-
+                                borderRadius: BorderRadius.circular(20)),
                             child: Image.asset(
                               'images/images1.jpeg',
-                            height: 100,
+                              height: 100,
                               width: double.infinity,
                               fit: BoxFit.cover,
-
                             ),
                           ),
-                          SizedBox(height: 10,),
+                          SizedBox(
+                            height: 10,
+                          ),
                           Align(
                               alignment: Alignment.centerRight,
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 10),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
                                 child: Text('ابو مازن السوري'),
-                              )
+                              )),
+                          SizedBox(
+                            height: 20,
                           ),
-                          SizedBox(height: 20,),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 8),
                             child: Row(
                               children: [
-                                Icon(Icons.star,color: Colors.yellow,),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.yellow,
+                                ),
                                 Text('5.0'),
-                                SizedBox(width: 14,),
-                                Icon(Icons.timer,color: Colors.yellow,),
+                                SizedBox(
+                                  width: 14,
+                                ),
+                                Icon(
+                                  Icons.timer,
+                                  color: Colors.yellow,
+                                ),
                                 Text('25-20 دقيقة'),
-                                SizedBox(width: 14,),
-                                Icon(Icons.location_on_outlined,color: Colors.yellow,),
+                                SizedBox(
+                                  width: 14,
+                                ),
+                                Icon(
+                                  Icons.location_on_outlined,
+                                  color: Colors.yellow,
+                                ),
                                 Text('5 كلم'),
-                                SizedBox(width: 14,),
-
+                                SizedBox(
+                                  width: 14,
+                                ),
                               ],
                             ),
                           ),
@@ -73,6 +95,6 @@ void main() {
           ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }
